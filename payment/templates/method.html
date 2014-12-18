@@ -1,0 +1,14 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "base.html" %}
+{% block title %}LocalGov{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="small-12 columns">
+      <form method="post" action="">
+        <h3>Choose a payment method</h3>
+        {{form.method}}
+       <button type="submit" class="expand">Next</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

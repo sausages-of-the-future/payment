@@ -1,0 +1,28 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "base.html" %}
+{% block title %}Payment platform{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="small-12 columns">
+         <h3>Payment details</h3>
+         <div class="panel">
+          <p>Total: &pound;{{order['total']|format_money}}</p>
+          <p>Item: {{order['description']}}</p>
+          <p>Service: {{order['service']}}</p>
+        </div>
+      <form action="" method="post">
+        <p>Choose a previously registered card:</p>
+        <select>
+          <option></option>
+          <option>**** **** **** 1982</>
+        </select>
+        <p>Or enter a new one:</p>
+        {{ render_field(form.card_name) }}
+        {{ render_field(form.card_number) }}
+        {{ render_field(form.expires)}}
+        {{ render_field(form.security_code) }}
+        <button type="submit" class="expand">Make payment</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
