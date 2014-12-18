@@ -6,3 +6,7 @@ class PaymentForm(Form):
     card_name = TextField('Name on card', validators=[validators.required('Enter the name on the card')])
     expires = TextField('Expires', validators=[validators.required('Enter the expiry date eg 01/15'), validators.regexp('[0-9][0-9]\/[0-9][0-9]', message="Enter expiry date eg 01/15")])
     security_code = TextField('Security code', validators=[validators.required('Enter the security code on the back of your card'), validators.Length(min=3, max=3)])
+
+class MethodForm(Form):
+    method = RadioField('Payment type', default='card', choices=[('card', 'Pay using a credit or debit card'), ('sms', 'Pay M -  pay from your bank using SMS'), ('print', 'Print a voucher and pay in cash at the Post Office')], validators=[validators.required()])
+
