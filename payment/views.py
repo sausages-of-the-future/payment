@@ -33,7 +33,7 @@ def start():
             }
 
     session['order'] = order
-    return redirect(url_for('pay'))
+    return redirect(url_for('method'))
 
 @app.route("/method", methods=['POST', 'GET'])
 def method():
