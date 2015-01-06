@@ -1,4 +1,3 @@
-#!/usr/bin/python
 from payment import app
 import os
 
