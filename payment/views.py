@@ -1,6 +1,17 @@
-from flask import Flask, request, redirect, render_template, url_for, session, flash, abort, current_app
-from payment import app, forms
 from urllib.parse import urlparse
+
+from flask import (
+    Flask,
+    request,
+    redirect,
+    render_template,
+    url_for,
+    session,
+    flash,
+    abort
+)
+
+from payment import app, forms
 
 def allowed_domain(return_uri):
     allowed_domains = app.config['ALLOWED_DOMAINS'].split(',')
@@ -21,15 +32,15 @@ def index():
 def error():
     return render_template('error.html')
 
-@app.route("/start", methods=['POST'])
+@app.route("/start")
 def start():
     session.clear()
     order = {
-            "total": float(request.form.get('total', 0)),
-            "description": request.form.get('description', ''),
-            "service": request.form.get('service', 0), 
-            "email":  request.form.get('email', ''),
-            "return_uri": request.form.get('return_uri', '')
+            "total": float(request.args.get('total', 0)),
+            "description": request.args.get('description', ''),
+            "service": request.args.get('service', 0),
+            "email":  request.args.get('email', ''),
+            "return_uri": request.args.get('return_uri', '')
             }
 
     session['order'] = order
