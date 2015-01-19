@@ -5,6 +5,7 @@ class Config(object):
     BASE_URL = os.environ['BASE_URL']
     WWW_BASE_URL = os.environ['WWW_BASE_URL']
     ALLOWED_DOMAINS = os.environ['ALLOWED_DOMAINS']
+    REDISCLOUD_URL = os.environ['REDISCLOUD_URL']
 
 class DevelopmentConfig(Config):
     DEBUG = True

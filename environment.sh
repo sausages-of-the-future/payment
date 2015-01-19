@@ -6,3 +6,4 @@ export SECURITY_PASSWORD_HASH='bcrypt'
 export BASE_URL='http://payment.gov.local'
 export WWW_BASE_URL='http://www.gov.local'
 export ALLOWED_DOMAINS='localgov.gov.local,fishing.gov.local'
+export REDISCLOUD_URL="redis://user:@localhost:6379"

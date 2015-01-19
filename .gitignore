@@ -5,3 +5,4 @@ lib
 *.pyc
 local_config.py
 environment_private.sh
+.DS_Store
