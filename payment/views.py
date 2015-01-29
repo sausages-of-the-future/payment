@@ -12,7 +12,7 @@ from flask import (
     abort
 )
 
-from payment import app, forms
+from payment import app, forms, locator
 
 def allowed_domain(return_uri):
     allowed_domains = app.config['ALLOWED_DOMAINS'].split(',')
@@ -35,6 +35,9 @@ def error():
 
 @app.route("/start")
 def start():
+
+    locator.send_message({"active": "payment"})
+
     session.clear()
     order = {
             "total": float(request.args.get('total', 0)),

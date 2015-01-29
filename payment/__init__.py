@@ -6,7 +6,7 @@ import redis
 app = Flask(__name__)
 app.config.from_object(os.environ.get('SETTINGS'))
 
-from messenger import Connector
-connector = Connector(app)
+from messenger import Locator
+locator = Locator(app)
 
 from payment import views
