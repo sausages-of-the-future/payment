@@ -12,9 +12,9 @@
         </div>
       <form action="" method="post">
         <p>Choose a previously registered card:</p>
-        <select>
-          <option></option>
-          <option>**** **** **** 1982</>
+        <select id="select-card">
+          <option value=""></option>
+          <option value="card">**** **** **** 1982</>
         </select>
         <p>Or enter a new one:</p>
         {{ render_field(form.card_name) }}
@@ -25,4 +25,5 @@
       </form>
     </div>
   </div>
+  <script src="{{config.BASE_URL + '/static/javascript/pay.js' }}"></script>
 {% endblock %}
