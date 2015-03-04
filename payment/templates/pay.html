@@ -16,14 +16,16 @@
           <option value=""></option>
           <option value="card">**** **** **** 1982</>
         </select>
-        <p>Or enter a new one:</p>
-        {{ render_field(form.card_name) }}
-        {{ render_field(form.card_number) }}
-        {{ render_field(form.expires)}}
-        {{ render_field(form.security_code) }}
+        <fieldset id="new-card">
+          <p>Or enter a new one:</p>
+          {{ render_field(form.card_name) }}
+          {{ render_field(form.card_number) }}
+          {{ render_field(form.expires)}}
+          {{ render_field(form.security_code) }}
+        </fieldset>
         <button type="submit" class="expand">Make payment</button>
       </form>
     </div>
   </div>
-  <script src="{{config.BASE_URL + '/static/javascript/pay.js' }}"></script>
+  <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
 {% endblock %}
