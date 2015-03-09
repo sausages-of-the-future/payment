@@ -8,5 +8,5 @@ class PaymentForm(Form):
     security_code = TextField('Security code', validators=[validators.required('Enter the security code on the back of your card'), validators.Length(min=3, max=3)])
 
 class MethodForm(Form):
-    method = RadioField('Payment type', default='card', choices=[('card', '<i class="fa fa-credit-card"></i> Pay using a credit or debit card'), ('sms', '<i class="fa fa-mobile"></i> Pay M -  pay from your bank using SMS'), ('print', '<i class="fa fa-qrcode"></i> Print a voucher and pay in cash at the Post Office')], validators=[validators.required()])
+    method = RadioField('Payment type', default='card', choices=[('card', 'Pay using a credit or debit card'), ('sms', 'Pay M &mdash; pay from your bank using SMS'), ('print', 'Print a voucher and pay in cash at the Post Office')], validators=[validators.required()])
 

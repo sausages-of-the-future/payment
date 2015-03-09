@@ -6,22 +6,22 @@
     <div class="small-12 columns">
          <h3>Payment details</h3>
          <div class="panel">
-          <p>Total: &pound;{{order['total']|format_money}}</p>
-          <p>Item: {{order['description']}}</p>
-          <p>Service: {{order['service']}}</p>
+          <p><strong>Total:</strong> &pound;{{order['total']|format_money}}</p>
+          <p><strong>Item:</strong> {{order['description']}}</p>
+          <p><strong>Service:</strong> {{order['service']}}</p>
         </div>
       <form action="" method="post">
-        <p>Choose a previously registered card:</p>
+        <h3>Choose a previously registered card:</h3>
         <select id="select-card">
           <option value=""></option>
           <option value="card">**** **** **** 1982</>
         </select>
-        <p>Or enter a new one:</p>
+        <h3>Or enter a new one:</h3>
         {{ render_field(form.card_name) }}
         {{ render_field(form.card_number) }}
         {{ render_field(form.expires)}}
         {{ render_field(form.security_code) }}
-        <button type="submit" class="expand">Make payment</button>
+        <button type="submit" class="expand button">Make payment</button>
       </form>
     </div>
   </div>
